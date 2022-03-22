@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: convertcurrency
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+        
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 500000
+        readTimeout: 500000
+        loggerLevel: basic              	
+
+
+server.port: 8081 

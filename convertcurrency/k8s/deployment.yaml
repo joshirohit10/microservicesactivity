@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: convertcurrencyservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: convertcurrencyservice
+  template:
+    metadata:
+      labels:
+        app: convertcurrencyservice
+    spec:
+      containers:
+      - name: convertcurrencyservice
+        image: rohitjoshi2021/convertcurrencyservice:1.0.0
+        env:
+          - name: SPRING_CLOUD_CONFIG_URI
+            value: http://conversionfactorservice.default.svc.cluster.local:8080
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8081
