@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conversionfactorservice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: conversionfactorservice
+  template:
+    metadata:
+      labels:
+        app: conversionfactorservice
+    spec:
+      containers:
+      - name: conversionfactorservice
+        image: rohitjoshi2021/conversionfactorservice:1.0.0
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
