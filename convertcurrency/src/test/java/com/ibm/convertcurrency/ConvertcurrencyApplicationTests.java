@@ -8,6 +8,7 @@ class ConvertcurrencyApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("test");
 	}
 
 }
