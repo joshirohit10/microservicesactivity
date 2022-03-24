@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: convertcurrencyservice
+  annotations:
+    konghq.com/plugins: rate-limiting-2
 spec:
   selector:
     app: convertcurrencyservice
