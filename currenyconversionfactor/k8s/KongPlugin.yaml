@@ -1,0 +1,13 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: rate-limiting-2
+disabled: false
+config: 
+  minute: 20
+  policy: local
+  fault_tolerant: true
+  hide_client_headers: false
+  redis_ssl: false
+  redis_ssl_verify: false
+plugin: rate-limiting
