@@ -4,9 +4,12 @@ metadata:
   name: conversionfactorservice
   annotations:
     konghq.com/plugins: rate-limiting-2
+    kubernetes.io/ingress.class: kong
 spec:
   selector:
     app: conversionfactorservice
+  type: NodePort  
   ports:
   - port: 8080
+    nodePort: 30081
    
