@@ -4,6 +4,8 @@ metadata:
   name: convertcurrencyservice
   annotations:
     konghq.com/plugins: rate-limiting-2
+    kubernetes.io/ingress.class: kong
+    ingress.kubernetes.io/service-upstream: "true"
 spec:
   selector:
     app: convertcurrencyservice
